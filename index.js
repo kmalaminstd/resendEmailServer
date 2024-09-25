@@ -9,6 +9,10 @@ const resend = new Resend('re_123456789')
 app.use(cors())
 app.use(express.json())
 
+app.get('/', (req, res)=>{
+    res.send("root page")
+})
+
 app.post('/send-email', async (req, res)=>{
     const {fullname, email, message} = req.body
 
